@@ -1,6 +1,6 @@
 #2.5
 #learn
-
+import json
 sum = [i**2 for i in range(10)]
 print(sum)
 
@@ -11,7 +11,6 @@ print(students)
 #practise
 
 raw_data = ["85", "92", "ERROR", "1050", "78", "WARNING", "99", "120"]
-
 def condition(s:str):
     try:
         #这里不用int(),s.isnumeric(),s.isdigit()
@@ -31,3 +30,11 @@ min_num = min(num_data)
 result = list(map(lambda x : (x-min_num)/(max_num-min_num),num_data))
 output = ["核心过载" if x > 0.8 else "运转正常" for x in result]
 print(output)
+
+#从提供的数据集中抽取了一些有意思的数据来进行练习
+#嘻嘻
+
+l1 = ["\ufeff90", "\u0000", "\u001F", " ", "\t\n\r"]
+l2 = ["１２０", "８０.５", "７９", "100.0"]
+l3 = ["0x50", "0b1010000", "0o120", "80"]
+#l4 = [null, true, false, "NaN", "Infinity", "-Infinity", "undefined", "null"]
