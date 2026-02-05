@@ -1,4 +1,5 @@
 # 2.6
+
 import math
 class Shape:
     def __init__(self):
