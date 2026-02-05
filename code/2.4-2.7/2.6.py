@@ -1,10 +1,13 @@
 # 2.6
-
+# 突出了封装，继承，多态的特点
 import math
 class Shape:
-    def __init__(self):
-        self.area = 0
+    def __init__(self,data:list):
+        self._Data = data
         pass
+    @property
+    def Data(self) -> list:
+        return self._Data
 
     def calc_area(self):
         pass
@@ -15,8 +18,8 @@ class Circle(Shape):
     data格式 [r]
     """
     def __init__(self,data:list):
-        super().__init__()
-        self.r = data[0]
+        super().__init__(data)
+        self.r = super().Data[0]
 
     def calc_area(self):
         self.area = math.pi*self.r**2
@@ -27,9 +30,9 @@ class Rectangle(Shape):
     data格式[width,height]
     """
     def __init__(self,data:list):
-        super().__init__()
-        self.width = data[0]
-        self.height = data[1]
+        super().__init__(data)
+        self.width = super().Data[0]
+        self.height = super().Data[1]
 
     def calc_area(self):
         self.area = self.width*self.height
